@@ -43,4 +43,4 @@ app.*.map.json
 /android/app/release
 
 # here_sdk
-plugins/
+/plugins/here_sdk/
