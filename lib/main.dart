@@ -6,6 +6,7 @@ import 'package:here_sdk/core.errors.dart';
 import 'package:provider/provider.dart';
 import 'package:tour_mate/firebase_options.dart';
 import 'package:tour_mate/utils/const.dart';
+import 'package:tour_mate/utils/env/env.dart';
 
 import 'logic/stores/auth_store.dart';
 import 'utils/routes/app_router.dart';
@@ -26,8 +27,8 @@ void _initializeHERESDK() async {
   SdkContext.init(IsolateOrigin.main);
 
   // Set your credentials for the HERE SDK.
-  String accessKeyId = "";
-  String accessKeySecret = "";
+  String accessKeyId = Env.hereSdkID;
+  String accessKeySecret = Env.hereSdkSecret;
   SDKOptions sdkOptions = SDKOptions.withAccessKeySecret(accessKeyId, accessKeySecret);
 
   try {
