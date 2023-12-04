@@ -27,6 +27,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
     return Scaffold(
       body: PageView(
         controller: pageController,
+        physics: const NeverScrollableScrollPhysics(),
         children: const [
           // DashboardScreen(),
           // MyProgramsScreen(),

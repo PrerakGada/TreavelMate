@@ -12,12 +12,15 @@ import 'logic/stores/auth_store.dart';
 import 'utils/routes/app_router.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   // Usually, you need to initialize the HERE SDK only once during the lifetime of an application.
   _initializeHERESDK();
 
+  // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
 
   runApp(MainApp());
 }
