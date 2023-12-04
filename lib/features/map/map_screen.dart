@@ -17,9 +17,9 @@ class MapScreen extends StatelessWidget {
         return;
       }
 
-      const double distanceToEarthInMeters = 180000;
+      const double distanceToEarthInMeters = 50000;
       MapMeasure mapMeasureZoom = MapMeasure(MapMeasureKind.distance, distanceToEarthInMeters);
-      hereMapController.camera.lookAtPointWithMeasure(GeoCoordinates(52.530932, 13.384915), mapMeasureZoom);
+      hereMapController.camera.lookAtPointWithMeasure(GeoCoordinates(19.0760, 72.8777), mapMeasureZoom);
     });
   }
 }

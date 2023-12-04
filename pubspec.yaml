@@ -26,6 +26,7 @@ dependencies:
   auto_route: ^7.8.4
   firebase_core: ^2.24.0
   envied: ^0.5.2
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,24 @@ dev_dependencies:
   auto_route_generator: ^7.3.2
   envied_generator: ^0.5.2
   build_runner: ^2.4.7
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/travel.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/travel.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/travel.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/travel.png"
 
 flutter:
   uses-material-design: true
