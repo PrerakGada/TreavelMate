@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:tour_mate/features/map/map_screen.dart';
 
 import '../profile/profile_screen.dart';
 
@@ -30,7 +31,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
           // DashboardScreen(),
           // MyProgramsScreen(),
           // NotificationsScreen(),
-          ProfileScreen(),
+          MapScreen(),
           ProfileScreen(),
           ProfileScreen(),
           ProfileScreen(),

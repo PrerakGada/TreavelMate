@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  here_sdk:
+    path: plugins/here_sdk
+
   cupertino_icons: ^1.0.6
   cached_network_image: ^3.3.0
   dio: ^5.4.0
@@ -21,6 +24,7 @@ dependencies:
   shared_preferences: ^2.2.2
   url_launcher: ^6.2.1
   auto_route: ^7.8.4
+  firebase_core: ^2.24.0
 
 dev_dependencies:
   flutter_test:

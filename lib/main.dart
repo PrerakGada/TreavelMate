@@ -1,11 +1,41 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:here_sdk/core.dart';
+import 'package:here_sdk/core.engine.dart';
+import 'package:here_sdk/core.errors.dart';
 import 'package:provider/provider.dart';
+import 'package:tour_mate/firebase_options.dart';
+import 'package:tour_mate/utils/const.dart';
 
 import 'logic/stores/auth_store.dart';
 import 'utils/routes/app_router.dart';
 
-void main() {
+Future<void> main() async {
+  // Usually, you need to initialize the HERE SDK only once during the lifetime of an application.
+  _initializeHERESDK();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+
   runApp(MainApp());
+}
+
+void _initializeHERESDK() async {
+  // Needs to be called before accessing SDKOptions to load necessary libraries.
+  SdkContext.init(IsolateOrigin.main);
+
+  // Set your credentials for the HERE SDK.
+  String accessKeyId = "";
+  String accessKeySecret = "";
+  SDKOptions sdkOptions = SDKOptions.withAccessKeySecret(accessKeyId, accessKeySecret);
+
+  try {
+    await SDKNativeEngine.makeSharedInstance(sdkOptions);
+  } on InstantiationException {
+    logger.d("Initialization failed: InstantiationException");
+    throw Exception("Failed to initialize the HERE SDK.");
+  }
 }
 
 class MainApp extends StatelessWidget {

@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     // wait 1 second
     await Future.delayed(const Duration(milliseconds: 2000));
 
-    if (context.read<AuthStore>().isAuthenticated) {
+    if (context.read<AuthStore>().isAuthenticated  || true) {
       if (context.mounted) {
         AutoRouter.of(context).replace(const MainScaffoldRoute());
       }
