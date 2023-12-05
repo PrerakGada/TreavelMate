@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:tour_mate/firebase_options.dart';
 import 'package:tour_mate/utils/const.dart';
 import 'package:tour_mate/utils/env/env.dart';
+import 'package:tour_mate/utils/light_theme.dart';
 
 import 'logic/stores/auth_store.dart';
 import 'utils/routes/app_router.dart';
@@ -54,6 +55,7 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
+        theme: light_theme(),
         routerConfig: appRouter.config(),
       ),
     );

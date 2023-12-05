@@ -51,13 +51,13 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     // wait 1 second
     await Future.delayed(const Duration(milliseconds: 2000));
 
-    if (context.read<AuthStore>().isAuthenticated  || true) {
+    if (context.read<AuthStore>().isAuthenticated) {
       if (context.mounted) {
         AutoRouter.of(context).replace(const MainScaffoldRoute());
       }
     } else {
       if (context.mounted) {
-        AutoRouter.of(context).replace(LoginRoute());
+        AutoRouter.of(context).replace(const OnboardingRoute());
       }
     }
   }
@@ -75,11 +75,20 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       body: Center(
         child: ScaleTransition(
           scale: _animation,
-          child: Image(
-              image: const AssetImage(
-                'assets/images/travel.png',
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image(
+                image: const AssetImage('assets/images/travel.png'),
+                width: MediaQuery.of(context).size.width * 0.8,
               ),
-              width: MediaQuery.of(context).size.width * 0.8),
+              const SizedBox(height: 20),
+              Image(
+                image: const AssetImage('assets/images/splash.png'),
+                width: MediaQuery.of(context).size.width * 0.8,
+              ),
+            ],
+          ),
         ),
       ),
     );
