@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tour_mate/features/home/home_screen.dart';
+import 'package:tour_mate/features/itenary/itenary_screen.dart';
 import 'package:tour_mate/features/map/map_screen.dart';
-
-import '../profile/profile_screen.dart';
+import 'package:tour_mate/features/schedule/schedule_screen.dart';
+import 'package:tour_mate/utils/palette.dart';
 
 @RoutePage()
 class MainScaffoldScreen extends StatefulWidget {
@@ -29,47 +32,61 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: const [
-          // DashboardScreen(),
-          // MyProgramsScreen(),
-          // NotificationsScreen(),
+          HomeScreen(),
+          ScheduleScreen(),
+          ScheduleScreen(),
+          ItenaryScreen(),
           MapScreen(),
-          ProfileScreen(),
-          ProfileScreen(),
-          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
-        selectedItemColor: Colors.purple,
-        unselectedItemColor: Colors.black26,
+        selectedItemColor: Palette.primary,
+        unselectedItemColor: Colors.black54,
         showUnselectedLabels: true,
         elevation: 0,
+        type: BottomNavigationBarType.fixed,
         onTap: (value) {
           setState(() {
             index = value;
             pageController.jumpToPage(index);
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
+            icon: SvgPicture.asset(
+              'assets/svgs/home.svg',
+              color: index == 0 ? Palette.primary : Colors.black54,
+            ),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shop_2),
-            label: 'Programs',
+            icon: SvgPicture.asset(
+              'assets/svgs/calendar.svg',
+              color: index == 1 ? Palette.primary : Colors.black54,
+            ),
+            label: 'Schedule',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.library_books),
+            icon: SvgPicture.asset(
+              'assets/svgs/home.svg',
+              color: index == 2 ? Palette.primary : Colors.black54,
+            ),
             label: 'Diary',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Store',
+            icon: SvgPicture.asset(
+              'assets/svgs/chat.svg',
+              color: index == 3 ? Palette.primary : Colors.black54,
+            ),
+            label: 'Itenary',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: SvgPicture.asset(
+              'assets/svgs/explore.svg',
+              color: index == 4 ? Palette.primary : Colors.black54,
+            ),
+            label: 'Explore',
           ),
         ],
       ),

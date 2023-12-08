@@ -2,6 +2,7 @@ import 'dart:ui';
 
 class Palette {
   static const Color primary = Color(0xFF24C451);
+  static const Color secondary = Color(0xFFFF5733);
   static const Color red = Color(0xFFE24242);
   static const Color orange = Color(0xFFFFAE73);
   static const Color yellow = Color(0xFFE0D922);
