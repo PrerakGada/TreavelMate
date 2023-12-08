@@ -5,6 +5,7 @@ import 'package:tour_mate/features/home/home_screen.dart';
 import 'package:tour_mate/features/itenary/itenary_screen.dart';
 import 'package:tour_mate/features/map/map_screen.dart';
 import 'package:tour_mate/features/schedule/schedule_screen.dart';
+import 'package:tour_mate/features/search/search_screen.dart';
 import 'package:tour_mate/utils/palette.dart';
 
 @RoutePage()
@@ -34,7 +35,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
         children: const [
           HomeScreen(),
           ScheduleScreen(),
-          ScheduleScreen(),
+          SearchScreen(),
           ItenaryScreen(),
           MapScreen(),
         ],
@@ -72,7 +73,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
               'assets/svgs/home.svg',
               color: index == 2 ? Palette.primary : Colors.black54,
             ),
-            label: 'Diary',
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
