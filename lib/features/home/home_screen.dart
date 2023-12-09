@@ -7,7 +7,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tour_mate/utils/palette.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
+
+  final List<String> images = [
+    'assets/images/place1.png',
+    'assets/images/place2.png',
+    'assets/images/place3.png',
+    'assets/images/place1.png',
+    'assets/images/place3.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +133,7 @@ class HomeScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                     child: Stack(children: [
                       Image.asset(
-                        'assets/images/place1.png',
+                        images[index],
                         fit: BoxFit.cover,
                         width: double.infinity,
                         height: double.infinity,

@@ -32,7 +32,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
       body: PageView(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: const [
+        children:  [
           HomeScreen(),
           ScheduleScreen(),
           SearchScreen(),
