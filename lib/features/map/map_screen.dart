@@ -3,6 +3,8 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:here_sdk/core.dart';
 import 'package:here_sdk/mapview.dart';
 
+import '../../utils/palette.dart';
+
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
 
@@ -11,6 +13,9 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
+  // final HereMapController _hereMapController;
+  // final MapCamera _mapCamera;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,15 +25,15 @@ class _MapScreenState extends State<MapScreen> {
         openButtonBuilder: RotateFloatingActionButtonBuilder(
           child: const Icon(Icons.add),
           fabSize: ExpandableFabSize.regular,
-          foregroundColor: Colors.amber,
-          backgroundColor: Colors.green,
+          foregroundColor: Palette.secondary,
+          backgroundColor: Palette.primary,
           shape: const CircleBorder(),
         ),
         closeButtonBuilder: DefaultFloatingActionButtonBuilder(
           child: const Icon(Icons.close),
           fabSize: ExpandableFabSize.small,
-          foregroundColor: Colors.deepOrangeAccent,
-          backgroundColor: Colors.lightGreen,
+          foregroundColor: Palette.primary,
+          backgroundColor: Palette.secondary,
           shape: const CircleBorder(),
         ),
         children: [
